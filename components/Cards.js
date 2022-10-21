@@ -1,10 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "web3uikit";
+import { useRouter } from "next/router";
 
 import styles from "../styles/Cards.module.css";
 
 const Cards = () => {
+  const router = useRouter();
+  // const handleClick = (route) => {
+  //   // e.preventDefault()
+  //   router.push(route);
+  // };
+
   return (
     <div>
       <h3 className={styles.title}>Services</h3>
@@ -14,7 +21,7 @@ const Cards = () => {
 
           <Button
             color="green"
-            // onClick={function noRefCheck() {}}
+            onClick={() => router.push("/Deposit")}
             text="Deposit Money"
             theme="colored"
           />
@@ -24,7 +31,7 @@ const Cards = () => {
 
           <Button
             color="yellow"
-            // onClick={function noRefCheck() {}}
+            onClick={() => router.push("/Withdraw")}
             text="Withdraw Money"
             theme="colored"
           />
@@ -33,7 +40,7 @@ const Cards = () => {
           <Image src="/borrow.jpg" alt="Deposite" width={500} height={390} />
           <Button
             color="red"
-            // onClick={function noRefCheck() {}}
+            onClick={() => router.push("/Borrow")}
             text="Borrow Money"
             theme="colored"
           />
@@ -43,7 +50,7 @@ const Cards = () => {
 
           <Button
             color="blue"
-            // onClick={function noRefCheck() {}}
+            onClick={() => router.push("/PayOff")}
             text="Payback Loan"
             theme="colored"
           />
