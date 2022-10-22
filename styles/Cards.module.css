@@ -18,6 +18,38 @@
   justify-content: space-evenly;
 }
 
+.btn {
+  margin-left: 40px;
+  margin-top: 30px;
+  width: 20%;
+  height: 50px;
+  border-radius: 10px;
+  color: #2e7daf;
+  background-color: #a0d9fc;
+  padding: auto;
+  border: 3px solid #2e7daf;
+  font-size: 20px;
+}
+
+.withdrawContainer {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.btn2 {
+  margin-left: 40px;
+  margin-top: 20px;
+  width: 10%;
+  height: 30px;
+  border-radius: 10px;
+  /* color: white; */
+  background-color: rgb(251, 197, 197);
+  padding: auto;
+  border: none;
+  border: 1px solid;
+  font-size: 15px;
+}
+
 @media screen and (max-width: 600px) {
   .mainContainer {
     margin-top: 50px;

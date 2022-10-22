@@ -4,6 +4,7 @@ import { useMoralis, useWeb3Contract } from "react-moralis";
 import { ethers } from "ethers";
 import DBankAbi from "../constants/DBank.json";
 import networkMapping from "../constants/contractAddress.json";
+import styles from "../styles/Cards.module.css";
 
 const Withdraw = () => {
   const [withdrawAmount, setWithDrawAmount] = useState("0");
@@ -14,39 +15,6 @@ const Withdraw = () => {
   const dbankAddress = networkMapping[chainString]?.DBank[0];
   console.log(dbankAddress);
   const dispatch = useNotification();
-  // =========================
-
-  //   const { runContractFunction } = useWeb3Contract()
-  //   async function WithDrawAmount(data) {
-  //     console.log("WithDrawing Amount")
-  //     const price = ethers.utils.parseUnits(data.data[0].inputResult, "ether").toString()
-
-  //     const WithDrawAmountOptions = {
-  //         abi: DBankAbi,
-  //         contractAddress: dbankAddress,
-  //         functionName: "withdraw",
-  //         msgValue: price,
-
-  //     }
-
-  //     await runContractFunction({
-  //         params: DepositAmountOptions,
-  //         onSuccess: handleInitializeSuccess,
-  //         onError: (error) => console.log(error),
-  //     })
-  // }
-
-  // async function handleInitializeSuccess(tx) {
-  //     await tx.wait(1)
-  //     console.log("Amount deposited")
-  //     dispatch({
-  //         type: "success",
-  //         message: "Amount deposited",
-  //         title: "Amount deposited",
-  //         position: "topR",
-  //     })
-
-  // =============================
 
   const handleInitializeSuccess = async (tx) => {
     await tx.wait(1);
@@ -72,17 +40,22 @@ const Withdraw = () => {
   //   ----------------
 
   // ===============
+
+  console.log(withdrawAmount);
   return (
     <div>
-      <Input
-        label="WithDraw Amount (ETH)"
-        name="WithDraw Amount (ETH)"
-        type="number"
-        onChange={(event) => {
-          setWithDrawAmount(event.target.value);
-        }}
-      />
+      <div className={styles.withdrawContainer}>
+        <Input
+          label="WithDraw Amount (ETH)"
+          name="WithDraw Amount (ETH)"
+          type="number"
+          onChange={(event) => {
+            setWithDrawAmount(event.target.value);
+          }}
+        />
+      </div>
       <button
+        className={styles.btn2}
         onClick={() =>
           withdraw({
             onError: (error) => {

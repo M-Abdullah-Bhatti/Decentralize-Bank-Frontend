@@ -61,5 +61,3 @@ const Cards = () => {
 };
 
 export default Cards;
-
-// onClick lgane hei
