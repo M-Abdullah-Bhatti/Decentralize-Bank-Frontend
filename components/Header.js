@@ -1,20 +1,15 @@
-
-import { ConnectButton } from "web3uikit"
-import Link from "next/link"
+import { ConnectButton } from "web3uikit";
+import styles from "../styles/Home.module.css";
 
 export default function Header() {
-    return (
-        <nav className="p-5 border-b-2 flex flex-row justify-between items-center">
-            <h1 className="py-4 px-4 font-bold text-3xl"> Dbank</h1>
-            <div className="flex flex-row items-center">
-                <Link href="/">
-                    <a className="mr-4 p-6">Home</a>
-                </Link>
-                <Link href="/Deposit">
-                    <a className="mr-4 p-6">Deposit</a>
-                </Link>
-                <ConnectButton moralisAuth={false} />
-            </div>
-        </nav>
-    )
+  return (
+    <nav className={styles.header}>
+      <div>
+        <h1> Dbank</h1>
+      </div>
+      <div className="flex flex-row items-center">
+        <ConnectButton moralisAuth={false} />
+      </div>
+    </nav>
+  );
 }
