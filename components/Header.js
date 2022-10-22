@@ -7,7 +7,7 @@ export default function Header() {
       <div>
         <h1> Dbank</h1>
       </div>
-      <div className="flex flex-row items-center">
+      <div>
         <ConnectButton moralisAuth={false} />
       </div>
     </nav>
